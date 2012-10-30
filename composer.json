@@ -1,0 +1,17 @@
+{
+	"name" : "burnbright/regionaldata",
+	"description" : "Provides country and country subdivision datamodels, along with data.",
+	"type" : "silverstripe-module",
+	"keywords" : ["address","countries","region","state","province","data"],
+	"authors" : [
+		{
+			"name" : "Jeremy Shipman",
+			"email" : "jeremy@burnbright.net",
+			"homepage" : "https://github.com/jedateach"
+		}
+	],
+	"require" : {
+		"php": ">=5.3.2",
+		"silverstripe/framework": "2.4.*",
+	}
+}
