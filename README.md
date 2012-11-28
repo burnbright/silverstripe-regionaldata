@@ -21,6 +21,11 @@ You should now be able to see countries and subdivisions in yoursite.tld/admin/r
  * Connect with other models for regionalisation
  * Addressing systems 
 
+## Javascript Field Updater
+
+Require the following script to templates / forms which have Country and State fields:
+`regionaldata/javascript/updater.jquery.js`
+
 ## Provided Data Set
 
 [2nd level subdivisons](http://en.wikipedia.org/wiki/Administrative_division) have different names,
