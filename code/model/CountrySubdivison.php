@@ -24,4 +24,23 @@ class CountrySubdivison extends DataObject{
 		'Type'
 	);
 	
+	static $default_sort = "\"Type\" ASC, \"Name\" ASC";
+	
+	static function get_by_country($country){
+		$countryobj = null;
+		if(is_string($country)){
+			if(strlen($country) === 2){
+				$countryobj = DataObject::get_one('Country',"\"ISO1A2\"  = '$country'");
+			}elseif(strlen($country) === 3){
+				$countryobj = DataObject::get_one('Country',"\"ISO1A3\"  = '$country'");
+			}
+		}else{
+			$countryobj = $country;
+		}
+		if(!($countryobj instanceof Country)){
+			return null;
+		}
+		return DataObject::get("CountrySubdivison","\"CountryID\" = ".$countryobj->ID);
+	}
+	
 }
