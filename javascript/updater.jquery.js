@@ -27,7 +27,7 @@
 						replaceRegionInput($('<input />'));
 					}
 				});
-			});
+			}).trigger('change');
 		});
 		
 		/**
@@ -37,6 +37,7 @@
 			valfield = valfield || "Name";
 			labelfield = labelfield || "Name";
 			var s = $('<select />');
+			$('<option />').appendTo(s);
 			for(var val in data) {
 			    $('<option />', {value: data[val][valfield], text: data[val][labelfield]}).appendTo(s);
 			}
@@ -53,9 +54,9 @@
 
 			$regionsinput.attr('id', old.attr('id'));
 			$regionsinput.attr('name', old.attr('name'));
-			$regionsinput.attr('type', old.attr('type'));
 			$regionsinput.attr('class', old.attr('class'));
 			$regionsinput.removeAttr('disabled');
+			$regionsinput.val(old.val());
 		}
 		
 	});
