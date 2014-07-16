@@ -1,6 +1,10 @@
 <?php
 
 class RegionalDataAPI extends Controller{
+
+	private static $allowed_actions = array(
+		"getregions"
+	);
 	
 	function getregions(SS_HTTPRequest $request){
 		$country = $request->postVar('Country');
