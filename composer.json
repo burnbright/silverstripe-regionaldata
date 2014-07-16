@@ -2,6 +2,7 @@
 	"name" : "burnbright/silverstripe-regionaldata",
 	"description" : "Provides country and country subdivision datamodels, along with data.",
 	"type" : "silverstripe-module",
+	"license" : "BSD-2-Clause",
 	"keywords" : ["silverstripe","address","countries","region","state","province","data"],
 	"authors" : [
 		{
