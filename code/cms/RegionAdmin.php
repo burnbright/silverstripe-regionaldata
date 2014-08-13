@@ -1,6 +1,8 @@
 <?php 
 
 class RegionAdmin extends ModelAdmin{
+
+	private static $menu_icon = 'regionaldata/images/cmsicon.png';
 	
 	static $url_segment = 'regions';
 	static $menu_title = 'Regions';
