@@ -1,9 +1,9 @@
 (function ($) {
 	$(document).ready(function () {
 		
-		var $regionsinput = $(this).find("input[name='State']");
-		$("form #Country.field").each(function () {
-			var $countryinput = $(this).find("select[name=Country]");
+		var $regionsinput = $(this).find("input[name='State'],input.state_regionaldata");
+		$("form #Country.field, form .field.country_regionaldata").each(function () {
+			var $countryinput = $(this).find("select[name=Country],select.country_regionaldata");
 			$countryinput.live('change', function () {
 				var data = {
 					'Country' : $(this).val()
@@ -17,7 +17,7 @@
 					cache : true,
 					success : function (response) {
 						response = JSON.parse(response);
-						if (!response.success) {
+						if (!response.success || response.regions.length <= 0) {
 							replaceRegionInput($('<input />'));
 						} else {
 							replaceRegionInput(arrayToDropdown(response.regions));
