@@ -26,6 +26,13 @@ You should now be able to see countries and subdivisions in yoursite.tld/admin/r
 Require the following script to templates / forms which have Country and State fields:
 `regionaldata/javascript/updater.jquery.js`
 
+If you are using the shop module, a good place to include this is in an extension of `Address`:
+```
+function updateFormFields(FieldList $fields, $nameprefix = ""){
+    Requirements::javascript('regionaldata/javascript/updater.jquery.js');
+}
+```
+
 ## Provided Data Set
 
 [2nd level subdivisons](http://en.wikipedia.org/wiki/Administrative_division) have different names,
