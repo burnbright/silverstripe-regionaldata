@@ -6,19 +6,19 @@ class LoadRegionalData extends BuildTask{
 	static $subdivisions_datafile = "regionaldata/data/cdh_subdivisions_10_29_2012.txt";
 	static $delete_existing_records = false;
 
-	function run($request){
+	function run($request) {
 		$this->loadCountries();
 		$this->loadSubdivisions();
 	}
 
-	function loadCountries(){
+	function loadCountries() {
 		$loader = new CountriesBulkLoader("Country");
 		$loader->deleteExistingRecords = self::$delete_existing_records;
 		$results = $loader->load(self::$countries_datafile);
 		echo "loaded countries.";
 	}
 
-	function loadSubdivisions(){
+	function loadSubdivisions() {
 		$loader = new CountrySubdivisionsBulkLoader("CountrySubdivison");
 		$loader->deleteExistingRecords = self::$delete_existing_records;
 		$results = $loader->load(self::$subdivisions_datafile);

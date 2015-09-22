@@ -6,13 +6,13 @@ class RegionalDataAPI extends Controller{
 		"getregions"
 	);
 
-	function getregions(SS_HTTPRequest $request){
+	function getregions(SS_HTTPRequest $request) {
 		$country = $request->postVar('Country');
-		if(!$country){
+		if(!$country) {
 			return $this->error('Country not provided');
 		}
 		$regions = CountrySubdivison::get_by_country($country);
-		if(!$regions){
+		if(!$regions) {
 			return $this->error('There are no regions for that country');
 		}
 		return json_encode(array(
@@ -21,7 +21,7 @@ class RegionalDataAPI extends Controller{
 		));
 	}
 
-	function error($message, $code = null){
+	function error($message, $code = null) {
 		return json_encode(array_filter(array(
 			'success' => false,
 			'message' => $message,

@@ -34,7 +34,7 @@ class Country extends DataObject{
 		'Continent' => null
 	);
 
-	static function get_by_isocode($code,$alpha = 2){
+	static function get_by_isocode($code,$alpha = 2) {
 		if(!$code)
 			return null;
 		$field = ($alpha == 3) ? "ISO1A3" : "ISO1A2";
