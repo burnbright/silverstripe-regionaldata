@@ -1,7 +1,7 @@
 <?php
 
 class CountriesBulkLoader extends CsvBulkLoader{
-	
+
 	public $columnMap = array(
 		"ISO 3166-1 COUNTRY NAME" => "Name",
 		"COUNTRY ALTERNATE NAMES" => "AlternateNames",
@@ -17,9 +17,9 @@ class CountriesBulkLoader extends CsvBulkLoader{
 		"GPS LATITUDE" => "Latitude",
 		"GPS LONGITUDE" => "Longitude"
 	);
-	
+
 	public $duplicateChecks = array(
 		'ISO 3166-1 COUNTRY NAME' => 'ISO1A2',
 	);
-	
+
 }
