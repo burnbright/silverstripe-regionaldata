@@ -16,16 +16,16 @@ class CountrySubdivison extends DataObject{
 	static $has_one = array(
 		'Country' => 'Country'
 	);
-	
+
 	static $summary_fields = array(
 		'Country.Name',
 		'Name',
 		'ISO2',
 		'Type'
 	);
-	
+
 	static $default_sort = "\"Type\" ASC, \"Name\" ASC";
-	
+
 	static function get_by_country($country){
 		$countryobj = null;
 		if(is_string($country)){
@@ -42,5 +42,5 @@ class CountrySubdivison extends DataObject{
 		}
 		return DataObject::get("CountrySubdivison","\"CountryID\" = ".$countryobj->ID);
 	}
-	
+
 }
