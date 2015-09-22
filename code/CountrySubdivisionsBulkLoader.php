@@ -26,11 +26,11 @@ class CountrySubdivisionsBulkLoader extends CsvBulkLoader{
 		)
 	);
 
-	function countryByISO2(&$obj, $val, $record){
+	function countryByISO2(&$obj, $val, $record) {
 		return Country::get_by_isocode($val);
 	}
 
-	function processType(&$obj, $val, $record){
+	function processType(&$obj, $val, $record) {
 		$obj->Type = trim(ucwords($val)); //cleanup
 	}
 
