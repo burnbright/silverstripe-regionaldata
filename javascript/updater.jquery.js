@@ -4,7 +4,7 @@
 		var $regionsinput = $(this).find("input[name='State'],input.state_regionaldata");
 		$("form #Country.field, form .field.country_regionaldata").each(function () {
 			var $countryinput = $(this).find("select[name=Country],select.country_regionaldata");
-			$countryinput.live('change', function () {
+			$countryinput.on('change', function () {
 				var data = {
 					'Country' : $(this).val()
 				};
