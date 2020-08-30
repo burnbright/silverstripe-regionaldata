@@ -1,0 +1,7 @@
+---
+Name: regionaldataroutes
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    'RegionalDataAPI' : 'RegionalDataAPI'
